@@ -1,0 +1,245 @@
+% TCD Beamer theme, "College Green"
+% Based on the Trinity College Dublin brand guidelines
+% Inspired by beamerthemebelfield.sty by Enda Hargaden (UCD, June 2023)
+
+\mode<presentation>
+
+\usepackage{eurosym,ifthen,graphicx}
+\usepackage[default]{sourcesanspro}
+\usepackage[T1]{fontenc}
+
+% Turn off navigation symbols nobody uses
+\setbeamertemplate{navigation symbols}{}
+\usefonttheme{default}
+
+% Slide margins to match the source presentation
+\setbeamersize{text margin left=0.25in}
+\setbeamersize{text margin right=0.25in}
+
+% ============================================================
+% TCD Full Colour Palette
+% Source: Trinity College Dublin Visual Identity Handbook
+% https://www.tcd.ie/identity/colour-palette/
+% ============================================================
+
+% --- Primary colours ---
+
+% PMS 300 — Trinity Blue
+\definecolor{pms_300}{HTML}{0569b9}
+\definecolor{pms_300_75}{HTML}{448fcb}
+\definecolor{pms_300_50}{HTML}{82b4dc}
+\definecolor{pms_300_25}{HTML}{c1daee}
+\definecolor{pms_300_10}{HTML}{e6f0f8}
+
+% PMS Cool Grey 11
+\definecolor{pms_coolgrey}{HTML}{50555a}
+\definecolor{pms_coolgrey_75}{HTML}{7c8083}
+\definecolor{pms_coolgrey_50}{HTML}{a8aaad}
+\definecolor{pms_coolgrey_25}{HTML}{d3d5d6}
+\definecolor{pms_coolgrey_10}{HTML}{eeeeef}
+
+% PMS Black / White
+\definecolor{pms_black}{HTML}{000000}
+\definecolor{pms_white}{HTML}{ffffff}
+
+% --- Secondary / Supporting colours ---
+
+% PMS 312 — Cyan Blue
+\definecolor{pms_312}{HTML}{00aacd}
+\definecolor{pms_312_75}{HTML}{40bfda}
+\definecolor{pms_312_50}{HTML}{80d4e6}
+\definecolor{pms_312_25}{HTML}{bfeaf3}
+\definecolor{pms_312_10}{HTML}{e6f7fa}
+
+% PMS 326 — Teal
+\definecolor{pms_326}{HTML}{00b4aa}
+\definecolor{pms_326_75}{HTML}{40c7bf}
+\definecolor{pms_326_50}{HTML}{80dad4}
+\definecolor{pms_326_25}{HTML}{bfecea}
+\definecolor{pms_326_10}{HTML}{e6f8f7}
+
+% PMS 360 — Bright Green
+\definecolor{pms_360}{HTML}{32d732}
+\definecolor{pms_360_75}{HTML}{65e165}
+\definecolor{pms_360_50}{HTML}{99eb99}
+\definecolor{pms_360_25}{HTML}{ccf5cc}
+\definecolor{pms_360_10}{HTML}{ebfbeb}
+
+% PMS 375 — Lime Green
+\definecolor{pms_375}{HTML}{96d700}
+\definecolor{pms_375_75}{HTML}{b0e140}
+\definecolor{pms_375_50}{HTML}{cbeb80}
+\definecolor{pms_375_25}{HTML}{e5f5bf}
+\definecolor{pms_375_10}{HTML}{f5fbe6}
+
+% PMS 389 — Yellow Green
+\definecolor{pms_389}{HTML}{d2e100}
+\definecolor{pms_389_75}{HTML}{dde940}
+\definecolor{pms_389_50}{HTML}{e9f080}
+\definecolor{pms_389_25}{HTML}{f4f8bf}
+\definecolor{pms_389_10}{HTML}{fbfce6}
+
+% PMS 109 — Yellow  (R255 G210 B0)
+\definecolor{pms_109}{HTML}{ffd200}
+\definecolor{pms_109_75}{HTML}{ffdd40}
+\definecolor{pms_109_50}{HTML}{ffe980}
+\definecolor{pms_109_25}{HTML}{fff4bf}
+\definecolor{pms_109_10}{HTML}{fffbe6}
+
+% PMS 466 — Sand / Warm Tan
+\definecolor{pms_466}{HTML}{c8aa78}
+\definecolor{pms_466_75}{HTML}{d6bf9a}
+\definecolor{pms_466_50}{HTML}{e3d4bc}
+\definecolor{pms_466_25}{HTML}{f1eadd}
+\definecolor{pms_466_10}{HTML}{faf7f2}
+
+% PMS 165 — Bright Orange  (R255 G100 B30)
+\definecolor{pms_165}{HTML}{ff641e}
+\definecolor{pms_165_75}{HTML}{ff8b56}
+\definecolor{pms_165_50}{HTML}{ffb28f}
+\definecolor{pms_165_25}{HTML}{ffd8c7}
+\definecolor{pms_165_10}{HTML}{ffefe6}
+
+% PMS 485 — Red
+\definecolor{pms_485}{HTML}{dc281e}
+\definecolor{pms_485_75}{HTML}{e55e56}
+\definecolor{pms_485_50}{HTML}{ee938f}
+\definecolor{pms_485_25}{HTML}{f6c9c7}
+\definecolor{pms_485_10}{HTML}{fceae9}
+
+% PMS 512 — Purple
+\definecolor{pms_512}{HTML}{823278}
+\definecolor{pms_512_75}{HTML}{a1659a}
+\definecolor{pms_512_50}{HTML}{c199bc}
+\definecolor{pms_512_25}{HTML}{e0ccdd}
+\definecolor{pms_512_10}{HTML}{f3ebf2}
+
+% PMS 280 — Navy
+\definecolor{pms_280}{HTML}{001e69}
+\definecolor{pms_280_75}{HTML}{40568f}
+\definecolor{pms_280_50}{HTML}{808fb4}
+\definecolor{pms_280_25}{HTML}{bfc7da}
+\definecolor{pms_280_10}{HTML}{e6e9f0}
+
+% PMS Gold 871 / Silver 877 — metallic; approximated for screen/print
+\definecolor{pms_gold}{HTML}{85754e}
+\definecolor{pms_silver}{HTML}{8a8d8f}
+
+% ============================================================
+% Convenience aliases used by the theme
+% ============================================================
+\definecolor{TrinityBlue}{HTML}{0569b9}   % = pms_300
+\definecolor{CoolGrey}{HTML}{50555a}      % = pms_coolgrey
+\definecolor{TrinityWhite}{HTML}{ffffff}  % = pms_white
+
+% A slightly off-black for body text (borrowed from Metropolis)
+\definecolor{mDarkTeal}{HTML}{23373b}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Implement the colour scheme
+
+\setbeamercolor{title}{fg=TrinityBlue}
+\setbeamercolor{subtitle}{fg=CoolGrey}
+\setbeamercolor{frametitle}{fg=TrinityBlue}
+\setbeamercolor{structure}{fg=TrinityBlue}
+
+% Slightly off-white canvas, off-black text
+\setbeamercolor{normal text}{fg=mDarkTeal, bg=black!2}
+\setbeamercolor{background canvas}{bg=black!2}
+
+% Table of contents
+\setbeamercolor{section in toc}{fg=mDarkTeal}
+\setbeamercolor{section in toc shaded}{fg=TrinityBlue}
+
+% Bullet points
+\setbeamertemplate{itemize items}[circle]
+\setbeamercolor{item}{fg=TrinityBlue}
+\setbeamercolor{subitem}{fg=CoolGrey}
+\setbeamercolor{subsubitem}{fg=black!2}
+
+% Hyperlinks
+\setbeamercolor{links}{fg=pms_512}
+\AtBeginDocument{%
+  \hypersetup{colorlinks=true, citecolor=pms_512, linkcolor=TrinityBlue, urlcolor=pms_512}%
+  % Patch \href so caption/figure environments can't override the link colour
+  \let\collegegreen@oldhref\href
+  \renewcommand{\href}[2]{\collegegreen@oldhref{#1}{\textcolor{pms_512}{#2}}}%
+  % Natbib places \NAT@open ( inside the hyperlink group but \NAT@close )
+  % outside it, so citecolor bleeds onto ( but not ). Fix: force both
+  % delimiters to body text colour so they are never affected by citecolor.
+  \@ifpackageloaded{natbib}{%
+    \let\NAT@open@cg\NAT@open
+    \let\NAT@close@cg\NAT@close
+    \def\NAT@open{\textcolor{mDarkTeal}{\NAT@open@cg}}%
+    \def\NAT@close{\textcolor{mDarkTeal}{\NAT@close@cg}}%
+  }{}%
+}
+
+% Blocks / theorems / alerts
+\setbeamertemplate{blocks}[rounded][shadow=true]
+\setbeamercolor{alerted text}{fg=TrinityBlue}
+\setbeamerfont{block title}{size=\Large}
+\setbeamercolor{block title}{use=structure, fg=white, bg=TrinityBlue}
+\setbeamercolor{block body}{use=structure, fg=mDarkTeal, bg=white}
+
+% Give footnotes a little breathing room above the footer
+\addtobeamertemplate{footnote}{}{\vspace{2ex}}
+
+% Title page layout
+\setbeamertemplate{title page}{%
+  \begin{center}
+    \vspace{0.5\baselineskip}
+    \includegraphics[width=0.45\textwidth]{Trinity-Main-Logo.pdf}
+
+    \vspace{0.75\baselineskip}
+    {\Large\textbf{\textcolor{TrinityBlue}{\inserttitle}}}
+
+    \vspace{0.25\baselineskip}
+    {\normalsize\textcolor{CoolGrey}{\insertsubtitle}}
+
+    \vspace{0.75\baselineskip}
+    {\large \insertauthor}
+
+    \vspace{0.25\baselineskip}
+    {\small \insertinstitute}
+
+    \vspace{0.25\baselineskip}
+    \insertdate
+  \end{center}
+}
+
+% Footer: TrinityBlue bar with institution name and frame number
+\setbeamercolor{footlinecolor}{fg=white, bg=TrinityBlue}
+\defbeamertemplate*{footline}{collegegreen}{%
+  \ifthenelse{\boolean{metropolis@standout}}{}{% hide footer on standout slides
+    \begin{beamercolorbox}[ht=4ex, leftskip=1.4cm, rightskip=0.3cm]{footlinecolor}
+      \usebeamercolor{footlinecolor}%
+      \vspace{0.1cm}
+      \textbf{Trinity College Dublin}, the University of Dublin
+      \hfill \insertframenumber
+    \end{beamercolorbox}%
+  }%
+}
+
+% "Standout" frame style — full-bleed TrinityBlue background with white text
+% Usage: \begin{frame}[standout] ... \end{frame}
+\providebool{metropolis@standout}
+\define@key{beamerframe}{standout}[true]{%
+  \booltrue{metropolis@standout}
+  \begingroup
+    \setkeys{beamerframe}{c}
+    \setkeys{beamerframe}{noframenumbering}
+    \setbeamercolor{background canvas}{bg=TrinityBlue}
+    \setbeamercolor{normal text}{fg=white}
+    \usebeamercolor[fg]{normal text}
+    \color{white}
+    \huge
+    \centering
+}
+\apptocmd{\beamer@reseteecodes}{%
+  \ifbool{metropolis@standout}{%
+    \endgroup
+    \boolfalse{metropolis@standout}
+  }{}%
+}{}{}
+
+\mode<all>
