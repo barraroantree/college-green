@@ -12,7 +12,7 @@ Inspired by [Enda Hargaden's](https://github.com/endahargaden) *Belfield* theme 
 | `beamerthemecollegegreen.sty` | The theme |
 | `CollegeGreen_ThemeExample.tex` | Working example (see below to compile) |
 | `refs.bib` | Example BibTeX file used by the example |
-| `Trinity-Main-Logo.pdf` | Main English logo — embedded automatically on title page |
+| `Trinity-Main-Logo.jpg` | Main English logo — embedded automatically on title page |
 | `TCD-logo-Irish-RGB.jpg` | Irish-language logo — swap in if desired (see below) |
 | `trinity-virtual-background-11.jpg` | Campus image used in the example |
 
@@ -39,10 +39,7 @@ Inspired by [Enda Hargaden's](https://github.com/endahargaden) *Belfield* theme 
 \date{Hilary Term 2025/26}
 
 \begin{document}
-{
-\setbeamercolor{background canvas}{bg=white}
 \begin{frame}\titlepage\end{frame}
-}
 % ... your slides ...
 \end{document}
 ```
@@ -104,7 +101,7 @@ e.g. `pms_312_50`. Source: [TCD Visual Identity Handbook](https://www.tcd.ie/ide
 
 ## Features
 
-- **Title page** — logo embedded automatically; white canvas override prevents a white-box artefact around the logo (see quick start)
+- **Title page** — logo embedded automatically on a white canvas
 - **Footer** — TrinityBlue bar showing "*Trinity College Dublin*, the University of Dublin" and frame number; hidden on standout slides
 - **Font** — Source Sans Pro (Trinity's recommended sans-serif face) loaded automatically
 - **Hyperlinks** — `\href` and `\url` use `pms_512`; internal links use `TrinityBlue`; natbib `\citet`/`\citep` citation links use `pms_512` with parentheses kept in body text colour
@@ -138,21 +135,6 @@ Or simply swap the file — rename `TCD-logo-Irish-RGB.jpg` to `Trinity-Main-Log
 \begin{frame}[standout]
   Section break or key takeaway
 \end{frame}
-```
-
----
-
-## White title page canvas
-
-The logo has a white background. To prevent a visible white box on the default off-white (`black!2`) canvas, wrap the title frame in a group:
-
-```latex
-{
-\setbeamercolor{background canvas}{bg=white}
-\begin{frame}
-\titlepage
-\end{frame}
-}
 ```
 
 ---
